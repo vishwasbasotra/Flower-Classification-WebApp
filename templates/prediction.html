@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet" />
+        
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        
+    <!-- Custom CSS -->
+    <style>
+        body{
+            background: #0F2027;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }  
+    </style>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href={{favicon}}>
+
+    <title>Prediction</title>
+</head>
+<body>
+    <h1 class="display-2 test-center font-weight-light text-center text-light">Thank You. Here is the Information You Gave:</h1>
+    <div class="jumbotron text-center">
+        Sepal Length: <span class="badge badge-secondary">{{session['s_len']}}</span>&nbsp;&nbsp;&nbsp;
+        Sepal Length: <span class="badge badge-secondary">{{session['s_width']}}</span>&nbsp;&nbsp;&nbsp;
+        Sepal Length: <span class="badge badge-secondary">{{session['p_len']}}</span>&nbsp;&nbsp;&nbsp;
+        Sepal Length: <span class="badge badge-secondary">{{session['p_width']}}</span>
+        <h1 class="display-4 test-center text-danger">Predicted Flower Class is: <span class="text-uppercase">iris {{results}}</span></h1>
+        <img class="img-fluid" src="{{ user_image }}" alt="User Image">
+    </div>
+</body>
+</html>
