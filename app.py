@@ -2,7 +2,8 @@ from flask import Flask,render_template,session,url_for, redirect
 import os
 from flask_wtf import FlaskForm
 import numpy as np
-from wtforms import TextField, SubmitField, StringField
+from wtforms import TextField, SubmitField, StringField, validators
+from wtforms.validators import NumberRange, Required
 import tensorflow as tf
 import joblib
 
@@ -40,10 +41,10 @@ app.config.update(dict(
 
 class FlowerForm(FlaskForm):
 
-    s_len = StringField("Sepal Length", render_kw={"placeholder": "Enter Between : 4 - 8"})
-    s_width = StringField("Sepal Width", render_kw={"placeholder": "Enter Between : 2 - 4.4"})
-    p_len = StringField("Petal Length", render_kw={"placeholder": "Enter Between : 1 - 7"})
-    p_width = StringField("Petal Length", render_kw={"placeholder": "Enter Between : 0 - 2.5"})
+    s_len = StringField("Sepal Length", validators=[Required()], render_kw={"placeholder": "Enter Between : 4 - 8"})
+    s_width = StringField("Sepal Width",[validators.required()], render_kw={"placeholder": "Enter Between : 2 - 4.4"})
+    p_len = StringField("Petal Length",[validators.required()], render_kw={"placeholder": "Enter Between : 1 - 7"})
+    p_width = StringField("Petal Length",[validators.required()], render_kw={"placeholder": "Enter Between : 0 - 2.5"})
 
     submit = SubmitField("Predict")
 
