@@ -17,3 +17,7 @@ Create the model that can classify the different species of the Iris flower.
 - Anaconda
 - IDE: VS Code, Sublime Text, etc
 - Python 3.7
+
+## License and Copyright
+© Vishwas Basotra
+Licensed under the [MIT License](LICENSE).
